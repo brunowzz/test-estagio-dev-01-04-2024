@@ -1,8 +1,8 @@
 from django.db import models
 from decimal import Decimal
+import locale
 
-class ConsumoEnergia(models.Model):
-   from django.db import models
+locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8")
 
 class ConsumoEnergia(models.Model):
     nome = models.CharField("Nome do Consumidor", max_length=128)
@@ -53,10 +53,11 @@ class ConsumoEnergia(models.Model):
             'nome': self.nome,
             'documento': self.documento,
             'cidade': self.cidade,
+            'tipo_tarifa': self.tipo_tarifa,
             'tarifa_distribuidora': self.tarifa_distribuidora,
             'estado': self.estado,
-            'economia_anual': economia_anual,
-            'economia_mensal': economia_mensal,
+            'economia_anual': f"{locale.currency(economia_anual, grouping=True)}" ,
+            'economia_mensal': f"{locale.currency(economia_mensal, grouping=True)}",
             'desconto_aplicado': desconto * Decimal('100'),  
             'cobertura': cobertura * Decimal('100')  
         }

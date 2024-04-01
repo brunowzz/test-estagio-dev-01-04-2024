@@ -10,6 +10,11 @@
         text-align: left;
     }
 
+    th:first-letter,
+    td::first-letter {
+        text-transform: uppercase;
+    }
+
     th {
         background-color: #f2f2f2;
     }
@@ -31,6 +36,7 @@
             <th>Nome</th>
             <th>Cidade</th>
             <th>Estado</th>
+            <th>Tipo de Tarifa</th>
             <th>Taxa da Distribuidora</th>
             <th>Economia Anual</th>
             <th>Economia Mensal</th>
@@ -44,9 +50,10 @@
             <td>{{ resultados.nome }}</td>
             <td>{{ resultados.cidade }}</td>
             <td>{{ resultados.estado }}</td>
+            <td>{{ resultados.tipo_tarifa }}</td>
             <td>{{ resultados.tarifa_distribuidora }}%</td>
-            <td>R$ {{ resultados.economia_anual }}</td>
-            <td>R$ {{ resultados.economia_mensal }}</td>
+            <td>{{ resultados.economia_anual }}</td>
+            <td>{{ resultados.economia_mensal }}</td>
             <td>{{ resultados.desconto_aplicado }}%</td>
             <td>{{ resultados.cobertura }}%</td>
         </tr>
