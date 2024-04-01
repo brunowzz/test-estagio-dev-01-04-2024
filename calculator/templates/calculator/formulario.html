@@ -1,0 +1,69 @@
+<style>
+    h2 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    form input {
+        width: 300px;
+        height: 35px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #f15a22;
+        background: transparent;
+        outline: none;
+    }
+
+    form button {
+        grid-column-start: span 2;
+        height: 35px;
+        background: transparent;
+        border: 1px solid #f15a22;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+    form select {
+        width: 100%;
+        height: 35px;
+        padding: 10px;
+        border: 1px solid #f15a22;
+        outline: none;
+        border-radius: 5px;
+    }
+
+    form button:hover {
+        background: #f15a22;
+        color: #fff;
+    }
+</style>
+
+{% extends 'calculator/base.html' %}
+
+{% block content %}
+
+<h2>Calculadora de Economia de Energia</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Calcular</button>
+</form>
+
+{% endblock %}
