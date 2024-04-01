@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Economia de Energia</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background: #f3f3f3;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 80px;
+            height: 60px;
+            background: #ffffff;
+            -webkit-box-shadow: 0px 7px 21px -3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 7px 21px -3px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 7px 21px -3px rgba(0, 0, 0, 0.75);
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .header h1 strong {
+            color: #f15a22;
+        }
+
+        .header ul {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .header a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            color: #000;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .header a:hover {
+            color: #f15a22;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 40px 120px;
+            min-height: calc(100vh - 60px - 40px);
+            padding: 40px 0;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+        }
+
+        footer p {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #f15a22;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#">
+            <h1><strong>Econo</strong>mize</h1>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Resultados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <a href="https://www.brunobarreiras.com.br" target="_blank">Bruno Barreiras</a></p>
+    </footer>
+</body>
+
+</html>
